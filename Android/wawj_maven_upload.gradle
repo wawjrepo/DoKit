@@ -1,0 +1,16 @@
+apply plugin: 'maven-publish'
+group = 'com.github.wawjrepo'
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.wawjrepo'
+                artifactId = project.ARTIFACT_ID
+                version = '3.5.1'
+            }
+        }
+    }
+}

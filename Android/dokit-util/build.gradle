@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply from: '../upload.gradle'
+apply from: '../wawj_maven_upload.gradle'
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
@@ -11,7 +12,7 @@ android {
         versionName rootProject.ext.android["versionName"]
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+        
     }
 
     buildTypes {

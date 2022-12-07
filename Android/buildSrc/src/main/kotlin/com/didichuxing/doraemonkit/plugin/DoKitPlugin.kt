@@ -162,9 +162,12 @@ class DoKitPlugin : Plugin<Project> {
     }
 
     private fun isReleaseTask(project: Project): Boolean {
-        return project.gradle.startParameter.taskNames.any {
-            it.contains("release") || it.contains("Release")
-        }
+        // 修改源码，使release时插件也可用
+//        return project.gradle.startParameter.taskNames.any {
+//            it.contains("release") || it.contains("Release")
+//        }
+
+        return false
     }
 
     private fun commNewInstance(project: Project): DoKitBaseTransform = when {

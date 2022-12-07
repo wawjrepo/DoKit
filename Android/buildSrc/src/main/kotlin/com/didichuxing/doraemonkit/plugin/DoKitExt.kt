@@ -108,17 +108,24 @@ fun InsnList.getMethodExitInsnNodes(): Sequence<InsnNode>? {
 }
 
 fun BaseVariant.isRelease(): Boolean {
-    if (this.name.contains("release") || this.name.contains("Release")) {
-        return true
-    }
+    // 修改源码，使release时插件也可用
+//    if (this.name.contains("release") || this.name.contains("Release")) {
+//        return true
+//    }
+//    return false
+
+
     return false
 }
 
 
 fun TransformContext.isRelease(): Boolean {
-    if (this.name.contains("release") || this.name.contains("Release")) {
-        return true
-    }
+    // 修改源码，使release时插件也可用
+//    if (this.name.contains("release") || this.name.contains("Release")) {
+//        return true
+//    }
+//    return false
+
     return false
 }
 

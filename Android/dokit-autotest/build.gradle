@@ -2,6 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply from: '../upload.gradle'
+apply from: '../wawj_maven_upload.gradle'
+
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]

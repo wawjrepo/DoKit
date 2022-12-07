@@ -65,7 +65,7 @@ class DoKitPluginConfigProcessor(val project: Project) : VariantProcessor {
                         DoKitExtUtil.HAS_DOKIT_TCP_HOOK_DJ = true
                     }
 
-                    if (thirdLibInfo.variant.contains("dokitx-gps-mock") || thirdLibInfo.variant.contains("dokit-gps-mock")){
+                    if (thirdLibInfo.variant.contains("dokitx-gps-mock") || thirdLibInfo.variant.contains("dokit-gps-mock")) {
                         DoKitExtUtil.DOKIT_GPS_MOCK_INCLUDE = true;
                     }
 //                    "thirdLibInfo.variant===>${thirdLibInfo.variant}".println()
@@ -82,7 +82,7 @@ class DoKitPluginConfigProcessor(val project: Project) : VariantProcessor {
                         DoKitExtUtil.HAS_DOKIT_TCP_HOOK_DJ = true
                     }
 
-                    if (thirdLibInfo.variant.contains("dokitx-gps-mock") || thirdLibInfo.variant.contains("dokit-gps-mock")){
+                    if (thirdLibInfo.variant.contains("dokitx-gps-mock") || thirdLibInfo.variant.contains("dokit-gps-mock")) {
                         DoKitExtUtil.DOKIT_GPS_MOCK_INCLUDE = true;
                     }
 
@@ -137,7 +137,7 @@ class DoKitPluginConfigProcessor(val project: Project) : VariantProcessor {
 
             project.tasks.find {
                 //"===task Name is ${it.name}".println()
-                it.name == "processDebugManifest"
+                it.name == "process${variant.buildType.name}Manifest"
             }?.let { transformTask ->
                 transformTask.doLast {
                     "===processDebugManifest task has executed===".println()

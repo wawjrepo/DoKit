@@ -24,6 +24,19 @@ android {
             keyAlias "test"
             keyPassword "test123456"
         }
+        debug {
+            storeFile file("keystore/test.keystore")
+            storePassword "test123456"
+            keyAlias "test"
+            keyPassword "test123456"
+        }
+
+        debug2 {
+            storeFile file("keystore/test.keystore")
+            storePassword "test123456"
+            keyAlias "test"
+            keyPassword "test123456"
+        }
     }
     buildTypes {
         debug {
@@ -214,7 +227,7 @@ dependencies {
 //    implementation files('libs/BaiduLBS_Android.jar')
     //腾讯x5
     implementation rootProject.ext.dependencies["tbs"]
-    debugImplementation rootProject.ext.dependencies["leakcanary_android"]
+    implementation rootProject.ext.dependencies["leakcanary_android"]
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation project(":dokit-pthread-hook")
 

@@ -137,7 +137,7 @@ class DoKitPluginConfigProcessor(val project: Project) : VariantProcessor {
 
             project.tasks.find {
                 //"===task Name is ${it.name}".println()
-                it.name == "processDebugManifest"
+                it.name == "process${variant.buildType.name}Manifest"
             }?.let { transformTask ->
                 transformTask.doLast {
                     "===processDebugManifest task has executed===".println()
