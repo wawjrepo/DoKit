@@ -27,11 +27,6 @@ android {
                 arguments '-DANDROID_STL=c++_static'
             }
         }
-        javaCompileOptions {
-            annotationProcessorOptions {
-                includeCompileClasspath true
-            }
-        }
     }
 
     buildTypes {
