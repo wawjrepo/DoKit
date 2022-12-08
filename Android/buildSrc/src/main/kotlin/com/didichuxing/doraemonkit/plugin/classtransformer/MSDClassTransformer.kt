@@ -23,7 +23,6 @@ import org.objectweb.asm.tree.*
  */
 class MSDClassTransformer(private val level: Int = 1) : AbsClassTransformer() {
 
-    private val thresholdTime = DoKitExtUtil.slowMethodExt.stackMethod.thresholdTime
     override fun transform(context: TransformContext, klass: ClassNode): ClassNode {
         if (onCommInterceptor(context, klass)) {
             return klass
@@ -52,10 +51,10 @@ class MSDClassTransformer(private val level: Int = 1) : AbsClassTransformer() {
 
         klass.methods.filter { methodNode ->
             methodNode.name != "<init>" &&
-                    !methodNode.isEmptyMethod() &&
-                    !methodNode.isSingleMethod() &&
-                    !methodNode.isGetSetMethod() &&
-                    !methodNode.isMainMethod(klass.className)
+                !methodNode.isEmptyMethod() &&
+                !methodNode.isSingleMethod() &&
+                !methodNode.isGetSetMethod() &&
+                !methodNode.isMainMethod(klass.className)
         }.forEach { methodNode ->
             val key = "${klass.className}&${methodNode.name}&${methodNode.desc}"
             if (methodStackKeys.contains(key)) {
@@ -135,7 +134,7 @@ class MSDClassTransformer(private val level: Int = 1) : AbsClassTransformer() {
                     )
                 )
                 add(IntInsnNode(BIPUSH, DoKitExtUtil.STACK_METHOD_LEVEL))
-                add(IntInsnNode(BIPUSH, thresholdTime))
+                add(IntInsnNode(BIPUSH, DoKitExtUtil.slowMethodExt.stackMethod.thresholdTime))
                 add(IntInsnNode(BIPUSH, level))
                 add(LdcInsnNode(className))
                 add(LdcInsnNode(methodName))
@@ -159,7 +158,7 @@ class MSDClassTransformer(private val level: Int = 1) : AbsClassTransformer() {
                     )
                 )
                 add(IntInsnNode(BIPUSH, DoKitExtUtil.STACK_METHOD_LEVEL))
-                add(IntInsnNode(BIPUSH, thresholdTime))
+                add(IntInsnNode(BIPUSH, DoKitExtUtil.slowMethodExt.stackMethod.thresholdTime))
                 add(IntInsnNode(BIPUSH, level))
                 add(LdcInsnNode(className))
                 add(LdcInsnNode(methodName))
@@ -202,7 +201,7 @@ class MSDClassTransformer(private val level: Int = 1) : AbsClassTransformer() {
                         "Lcom/didichuxing/doraemonkit/aop/method_stack/MethodStackUtil;"
                     )
                 )
-                add(IntInsnNode(BIPUSH, thresholdTime))
+                add(IntInsnNode(BIPUSH, DoKitExtUtil.slowMethodExt.stackMethod.thresholdTime))
                 add(IntInsnNode(BIPUSH, level))
                 add(LdcInsnNode(className))
                 add(LdcInsnNode(methodName))
@@ -225,7 +224,7 @@ class MSDClassTransformer(private val level: Int = 1) : AbsClassTransformer() {
                         "Lcom/didichuxing/doraemonkit/aop/method_stack/MethodStackUtil;"
                     )
                 )
-                add(IntInsnNode(BIPUSH, thresholdTime))
+                add(IntInsnNode(BIPUSH, DoKitExtUtil.slowMethodExt.stackMethod.thresholdTime))
                 add(IntInsnNode(BIPUSH, level))
                 add(LdcInsnNode(className))
                 add(LdcInsnNode(methodName))

@@ -23,7 +23,6 @@ import org.objectweb.asm.tree.*
 //@Priority(2)
 //@AutoService(ClassTransformer::class)
 class GSMClassTransformer : AbsClassTransformer() {
-    val thresholdTime = DoKitExtUtil.slowMethodExt.normalMethod.thresholdTime
 
     override fun transform(context: TransformContext, klass: ClassNode): ClassNode {
         if (onCommInterceptor(context, klass)) {
@@ -41,7 +40,6 @@ class GSMClassTransformer : AbsClassTransformer() {
         if (DoKitExtUtil.ignorePackageNames(klass.className)) {
             return klass
         }
-
 
         val className = klass.className
         //没有自定义设置插装包名 默认是以packageName为包名 即全局业务代码插桩
@@ -116,7 +114,7 @@ class GSMClassTransformer : AbsClassTransformer() {
                         "Lcom/didichuxing/doraemonkit/aop/MethodCostUtil;"
                     )
                 )
-                add(IntInsnNode(SIPUSH, thresholdTime))
+                add(IntInsnNode(SIPUSH, DoKitExtUtil.slowMethodExt.normalMethod.thresholdTime))
                 add(LdcInsnNode("$className&$methodName"))
                 add(
                     MethodInsnNode(
@@ -136,7 +134,7 @@ class GSMClassTransformer : AbsClassTransformer() {
                         "Lcom/didichuxing/doraemonkit/aop/MethodCostUtil;"
                     )
                 )
-                add(IntInsnNode(SIPUSH, thresholdTime))
+                add(IntInsnNode(SIPUSH, DoKitExtUtil.slowMethodExt.normalMethod.thresholdTime))
                 add(LdcInsnNode("$className&$methodName"))
                 add(VarInsnNode(ALOAD, 0))
                 add(
@@ -175,7 +173,7 @@ class GSMClassTransformer : AbsClassTransformer() {
                         "Lcom/didichuxing/doraemonkit/aop/MethodCostUtil;"
                     )
                 )
-                add(IntInsnNode(SIPUSH, thresholdTime))
+                add(IntInsnNode(SIPUSH, DoKitExtUtil.slowMethodExt.normalMethod.thresholdTime))
                 add(LdcInsnNode("$className&$methodName"))
                 add(
                     MethodInsnNode(
@@ -195,7 +193,7 @@ class GSMClassTransformer : AbsClassTransformer() {
                         "Lcom/didichuxing/doraemonkit/aop/MethodCostUtil;"
                     )
                 )
-                add(IntInsnNode(SIPUSH, thresholdTime))
+                add(IntInsnNode(SIPUSH, DoKitExtUtil.slowMethodExt.normalMethod.thresholdTime))
                 add(LdcInsnNode("$className&$methodName"))
                 add(VarInsnNode(ALOAD, 0))
                 add(

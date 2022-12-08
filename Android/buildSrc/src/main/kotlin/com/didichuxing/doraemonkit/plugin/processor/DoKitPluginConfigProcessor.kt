@@ -1,5 +1,6 @@
 package com.didichuxing.doraemonkit.plugin.processor
 
+import android.databinding.tool.ext.toCamelCase
 import com.android.build.gradle.AppExtension
 import com.android.build.gradle.api.ApplicationVariant
 import com.android.build.gradle.api.BaseVariant
@@ -134,13 +135,13 @@ class DoKitPluginConfigProcessor(val project: Project) : VariantProcessor {
 
         //查找application module下的配置
         if (variant is ApplicationVariant) {
-
             project.tasks.find {
                 //"===task Name is ${it.name}".println()
-                it.name == "process${variant.buildType.name}Manifest"
+                it.name == "process${variant.buildType.name.toCamelCase()}Manifest"
+
             }?.let { transformTask ->
                 transformTask.doLast {
-                    "===processDebugManifest task has executed===".println()
+                    "===process${variant.buildType.name.toCamelCase()}Manifest task has executed===".println()
                     //查找AndroidManifest.xml 文件路径
                     variant.mergedManifests.forEach { manifest ->
                         val parser = SAXParserFactory.newInstance().newSAXParser()
