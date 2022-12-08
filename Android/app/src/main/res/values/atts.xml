@@ -10,4 +10,6 @@
         <attr name="itemIconShow" format="boolean" />
     </declare-styleable>
 
+    <bool name="leak_canary_allow_in_non_debuggable_build">true</bool>
+
 </resources>
