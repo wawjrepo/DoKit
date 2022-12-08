@@ -9,7 +9,7 @@ import com.google.auto.service.AutoService
 @AutoService(AbstractKit::class)
 class RamKit : AbstractKit() {
     override val name: Int
-        get() = R.string.dk_frameinfo_ram
+        get() = R.string.dk_frameinfo_ram_occupied
     override val icon: Int
         get() = R.mipmap.dk_ram
 

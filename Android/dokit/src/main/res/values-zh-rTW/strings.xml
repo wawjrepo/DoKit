@@ -108,7 +108,7 @@
     <string name="dk_frameinfo_upstream">上流量</string>
     <string name="dk_frameinfo_avg_value">平均值</string>
     <string name="dk_frameinfo_big_img">大圖檢測</string>
-    <string name="dk_frameinfo_leakcanary">LeakCanary</string>
+    <string name="dk_frameinfo_leakcanary">内存泄漏</string>
     <string name="dk_tools_dbdebug">DBView</string>
 
     <string name="dk_log_info_edt_hint">輸入想要過濾的關鍵字</string>

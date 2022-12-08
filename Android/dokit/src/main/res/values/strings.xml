@@ -48,6 +48,7 @@
     <string name="dk_kit_ui_monitor">UI显示实时数据</string>
     <string name="dk_kit_time_counter">启动耗时</string>
     <string name="dk_kit_method_cost">函数耗时</string>
+    <string name="dk_kit_method_cost_log" translatable="false">函数耗时\n日志中查看</string>
     <string name="dk_kit_comm_webview">......</string>
     <string name="dk_kit_mock_template_preview">数据预览</string>
     <string name="dk_kit_method_cost_desc">
@@ -119,12 +120,13 @@
     <string name="dk_frameinfo_fps">帧率</string>
     <string name="dk_frameinfo_cpu">CPU</string>
     <string name="dk_frameinfo_ram">内存</string>
+    <string name="dk_frameinfo_ram_occupied" translatable="false">内存占用</string>
+    <string name="dk_frameinfo_leakcanary">内存泄漏</string>
     <string name="dk_frameinfo_custom">自定义</string>
     <string name="dk_frameinfo_upstream">上行流量</string>
     <string name="dk_frameinfo_downstream">下行流量</string>
     <string name="dk_frameinfo_avg_value">平均值</string>
     <string name="dk_frameinfo_big_img">大图检测</string>
-    <string name="dk_frameinfo_leakcanary">LeakCanary</string>
     <string name="dk_tools_dbdebug">DBView</string>
 
     <string name="dk_log_info_edt_hint">输入想要过滤的关键字</string>

@@ -19,6 +19,5 @@
         android:layout_width="wrap_content"
         android:layout_marginTop="6dp"
         android:gravity="center"
-        android:singleLine="true"
         android:text="@string/dk_app_name" />
 </LinearLayout>

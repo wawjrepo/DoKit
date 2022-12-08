@@ -21,7 +21,7 @@ import com.google.auto.service.AutoService
 @AutoService(AbstractKit::class)
 class MethodCostKit : AbstractKit() {
     override val name: Int
-        get() = R.string.dk_kit_method_cost
+        get() = R.string.dk_kit_method_cost_log
     override val icon: Int
         get() = R.mipmap.dk_method_cost
 
