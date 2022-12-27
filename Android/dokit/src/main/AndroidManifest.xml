@@ -64,6 +64,11 @@
                 android:resource="@xml/dokit_debug_provider_paths" />
         </provider>
 
+        <provider
+            android:name=".DokitInitContentProvider"
+            android:authorities="${applicationId}.DOKIT_INIT_CONTENTPROVIDER"
+            android:exported="false" />
+
         <!-- Dokit targetApi为 29 Android Q时截屏的前台服务 -->
         <service
             android:name="com.didichuxing.doraemonkit.kit.colorpick.ScreenRecorderService"
